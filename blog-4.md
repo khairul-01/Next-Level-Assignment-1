@@ -37,7 +37,7 @@ These principle work together to reduce complexity, organize business logic, and
 
 ## Understanding OOP in TypeScript
 Before discussing the four pillars, it is important to understand what OOP actually tries to solve.
-#### The core idea of OOP    
+### The core idea of OOP    
 OOP models software around real-world entities.  
 For example:    
 |Real World | OOP Representation |
@@ -101,7 +101,8 @@ Child classes extend and specialize that behavior.
 
 ## The main goal of Inheritance
 The primary goal is:    
-| Reuse common logic while avoiding duplication  
+| Reuse common logic while avoiding duplication 
+
 Without inheritance, developers repeatedly rewrite similar code.
 
 ### Example without Inheritance
@@ -134,12 +135,13 @@ class Cat extends Animal {}
 ```
 Now the logic exists only once.
 
-### Benefits of Inheritance
-1. Centralized Logic
+### Benefits of Inheritance  
+1. Centralized Logic   
 
 Shared functionality exists in one place.  
-This improves maintainability.  
-2. Logical Classification
+This improves maintainability. 
+
+2. Logical Classification 
 
 Inheritance models real-world relationship naturally.  
 
@@ -181,6 +183,7 @@ for better flexibility.
 ## 3. Polymorphism -- flexible and extensible systems
 Polymorphism means:   
 | One interface can represent multiple behaviors.  
+
 The word comes from *Greek*:  
 - 'Poly' = many
 - 'Morph' = forms  
@@ -190,6 +193,7 @@ This means the same method behaves differently depending on the objects.
 ### Core purpose of polymorphism
 The main goal is:  
 | Reduce conditional complexity.  
+
 Without polymorphism, applications become full of
 ```ts
 if...
@@ -271,6 +275,7 @@ class MongoDB extends Database {
 1. Reduces mental overload
 
 Developers interact with simple interfaces. They do not think about internal implementation constantly.
+
 2. Standardizes Architectures  
 Every database class must follow:
 ```ts
@@ -329,7 +334,7 @@ Encapsulation is critical in:
 because invalid data can cause serious problems.
 
 ## How all four pillars work together
-#### Imagine a food delivery app  
+### Imagine a food delivery app  
 ***Inheritance***
 ```ts
 User
@@ -337,13 +342,16 @@ User
  |--- DeliverAgent
  |--- Admin
 ```
-***Polymorphism***
+***Polymorphism***  
+
 Different payment methods:  
 ```ts
 pay()
 ```
 Each behaves differently.  
+
 ***Abstraction***  
+
 Developers use:  
 ```ts
 payment.process()
@@ -351,6 +359,7 @@ payment.process()
 without knowing gateway internals.   
 
 ***Encapsulation***  
+
 Sensitive user balance remain private.
 
 ## How OOP reduce complexity in large teams
