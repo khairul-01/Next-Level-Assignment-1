@@ -196,7 +196,7 @@ With utility types:
 type UserPreview = Pick<User, "id" | "name">;
 ```
 Its's much shorter and cleaner.
-----
+----------
 ## Common use cases
 ***Pick***  
 Used for:
@@ -222,6 +222,6 @@ Utility types work well with:
 ## Conclusion
 ***Pick*** and ***Omit*** are powerful TypeScript utility that help us create specialized 'slice' of a master interface without duplicating code.
 - ***Pick*** selects only the required properties
-- ***Omit*** removes unnecessary properties
+- ***Omit*** removes unnecessary properties   
 Together, they help maintain DRY principles by centralizing type definitions,reducing repetition, and automatically synchronizing changes across the codebase.  
 By using these utility types properly, we can write cleaner, safer, more maintainable, and scalable TypeScript applications.

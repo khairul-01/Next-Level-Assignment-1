@@ -8,7 +8,7 @@ Modern software applications are becoming increasingly large and complex. Enterp
 - Dashboard
 - Shared business logic
 - Microservices
-- Reusable UI components
+- Reusable UI components    
 As projects grow, we face several major challenges:
 - Code duplication
 - Difficult debugging
