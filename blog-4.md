@@ -36,16 +36,12 @@ Before discussing the four pillars, it is important to understand what OOP actua
 #### The core idea of OOP    
 OOP models software around real-world entities.  
 For example:    
-Real World | OOP Representation 
----   
-|Car | *Car* class"|
----   
-|User | *User* class|  
----  
+|Real World | OOP Representation |
+|----------|---------------------| 
+|Car | *Car* class"| 
+|User | *User* class|   
 |Payment System | *Payment* class|  
----  
 |Bank Account | *BankAccount* class|   
----   
 Each object contains:
 - Data (properties)
 - Behavior (method)
@@ -59,8 +55,8 @@ class User {
     }
 }
 ```
-This grouping of related data and logic makes software easier to understand
-----
+This grouping of related data and logic makes software easier to understand  
+---  
 ## Why Large projects need OOP
 In small applications, procedural programming may work well.  
 However, large applications require:
