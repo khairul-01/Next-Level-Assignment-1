@@ -8,14 +8,16 @@ Modern software applications are becoming increasingly large and complex. Enterp
 - Dashboard
 - Shared business logic
 - Microservices
-- Reusable UI components    
+- Reusable UI components 
+   
 As projects grow, we face several major challenges:
 - Code duplication
 - Difficult debugging
 - Tight coupling
 - Poor scalability
 - Hard-to-manage logic
-- Unpredictable bugs     
+- Unpredictable bugs   
+
 Without proper architecture, a codebase can become 'spaghetti code' - messy, interconnected, and difficult to maintain.  
 This is why Object-Oriented Programming (OOP) is extremely important in large-scale TypeScript projects.  
 OOp provides a structured way to organize code using:
@@ -23,12 +25,14 @@ OOp provides a structured way to organize code using:
 - Objects
 - Shared protection
 - Data protection
-- Clear responsibility     
+- Clear responsibility    
+
 The four fundamental pillars of OOP are:
 1. Inheritance
 2. Polymorphism
 3. Abstraction
-4. Encapsulation       
+4. Encapsulation   
+
 These principle work together to reduce complexity, organize business logic, and improve maintainability.
 ---  
 ## Understanding OOP in TypeScript
@@ -38,10 +42,11 @@ OOP models software around real-world entities.
 For example:    
 |Real World | OOP Representation |
 |----------|---------------------| 
-|Car | *Car* class"| 
+|Car | *Car* class| 
 |User | *User* class|   
 |Payment System | *Payment* class|  
-|Bank Account | *BankAccount* class|   
+|Bank Account | *BankAccount* class| 
+    
 Each object contains:
 - Data (properties)
 - Behavior (method)
