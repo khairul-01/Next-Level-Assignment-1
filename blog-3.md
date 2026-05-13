@@ -6,21 +6,26 @@ For example:
 - A registration form may only need a username and email
 - A public profile may hide password
 - An admin panel may require additional fields  
+
 If we create separate interfaces manually for every situation, code duplication becomes a serious problem.  
+
 To solve this, TypeScript provides two utility types:
 - **Pick**
 - **Omit**
+
 These utility types help us create specialized "slice" of an existing interface while keeping the code DRY (Don't Repeat Yourself).
------
+
 ## What does DRY mean?
-DRY stands for: 
-| Don't Repeat Yourself   
-This principle means:
+DRY stands for:    
+| Don't Repeat Yourself 
+
+This principle means:  
 - Avoid writing the same code repeatedly
 - Reuse existing structures whenever possible
 - Keep code centralized
 - Reduce maintenance effort
-A DRY codebase is:
+
+A DRY codebase is:  
 - Cleaner
 - Easier to maintain
 - Less error-prone
@@ -37,10 +42,11 @@ interface User {
     role: string;
 }
 ```
-Now imagine we need:
+Now imagine we need:  
 1. A public profile
 2. A login form
 3. An admin view
+
 Without utility types, we might write:
 ```ts
 interface PublicUser {
@@ -55,7 +61,7 @@ interface LoginUser {
 }
 ```
 This duplicates properties repeatedly.
------
+
 ## Why code duplication is bad
 Duplicated code creates maintenance problems.  
 Imagine updating the email type:
@@ -100,7 +106,7 @@ Result:
 TypeScript automatically extracts those fields.
 
 ## What is *Omit*?
-*Omit* does the opposite of *Pick*.
+*Omit* does the opposite of *Pick*.  
 Instead of selecting properties, it removes properties from a type.  
 Syntax:  
 ```ts
@@ -132,13 +138,13 @@ Result:
 }
 ```
 ### Why *Omit* is useful
-*Omit* is helpful when:
+*Omit* is helpful when:  
 - Hiding private fields
 - Creating public API responses
 - Removing unnecessary data
 - Simplifying interfaces
 
-## Example: Backend API Response
+### Example: Backend API Response
 Database model:
 ```ts
 interface DatabaseUser {
@@ -154,17 +160,19 @@ Public API Response:
 type PublicUser = Omit<DatabaseUser, "password" | "secretKey">;
 ```
 This prevents accidental exposer of secure data.
------
+
 ## Combining *Pick* and *Omit*
 Sometimes developers combine both.  
 Example:
 ```ts
-type EditableUser = Pick<Omit<User, "id">, "name" | "email">;
+type EditableUser = Pick<
+Omit<User, "id">, "name" | "email"
+>;
 ```
 This creates a specialized editable slice.
-----
+
 ## How *Pick* and *Omit* keep code DRY
-#### Centralized type definitions
+### Centralized type definitions
 We define properties once:
 ```ts
 interface User {
@@ -174,16 +182,16 @@ interface User {
 }
 ```
 Then reuse them everywhere.
----
-#### Automatic Synchronization
+
+### Automatic Synchronization
 If the master interface changes:
 ```ts
 email: string | null;
 ```
-All derived types update automatically.  
+All derived types update automatically.   
 This reduces inconsistency.
----
-#### Less Repeated Code
+
+### Less Repeated Code
 Without utility types:
 ```ts
 interface UserPreview {
@@ -196,7 +204,7 @@ With utility types:
 type UserPreview = Pick<User, "id" | "name">;
 ```
 Its's much shorter and cleaner.
-----------
+
 ## Common use cases
 ***Pick***  
 Used for:
@@ -213,7 +221,7 @@ Used for:
 - Sanitizing data
 - Public API response
 
-#### Combine with other utility types
+### Combine with other utility types
 Utility types work well with:
 - *Partial*
 - *Readonly*
@@ -222,6 +230,7 @@ Utility types work well with:
 ## Conclusion
 ***Pick*** and ***Omit*** are powerful TypeScript utility that help us create specialized 'slice' of a master interface without duplicating code.
 - ***Pick*** selects only the required properties
-- ***Omit*** removes unnecessary properties   
+- ***Omit*** removes unnecessary properties 
+  
 Together, they help maintain DRY principles by centralizing type definitions,reducing repetition, and automatically synchronizing changes across the codebase.  
 By using these utility types properly, we can write cleaner, safer, more maintainable, and scalable TypeScript applications.
