@@ -35,7 +35,6 @@ The four fundamental pillars of OOP are:
 
 These principle work together to reduce complexity, organize business logic, and improve maintainability.
 
----  
 ## Understanding OOP in TypeScript
 Before discussing the four pillars, it is important to understand what OOP actually tries to solve.
 #### The core idea of OOP    
@@ -63,7 +62,6 @@ class User {
 ```
 This grouping of related data and logic makes software easier to understand  
 
----  
 ## Why Large projects need OOP
 In small applications, procedural programming may work well.  
 However, large applications require:
@@ -75,7 +73,6 @@ However, large applications require:
 
 OOP helps achieve these goals.
 
------
 ## The Relationship between the four pillars
 The four pillars are not isolated concepts.    
 They work together like parts of a building.  
@@ -89,7 +86,6 @@ They work together like parts of a building.
 
 Together they create maintainable software architecture.  
 
-----
 ## Inheritance - Building hierarchies and reusing logic
 Inheritance allows one class to derive properties and behavior from another class.  
 This creates a parent-child relationship.  
@@ -102,13 +98,13 @@ Animal
 ```
 The parent class contains shared functionality.  
 Child classes extend and specialize that behavior.  
-----
+
 ## The main goal of Inheritance
-The primary goal is:
+The primary goal is:    
 | Reuse common logic while avoiding duplication  
 Without inheritance, developers repeatedly rewrite similar code.
------
-#### Example without Inheritance
+
+### Example without Inheritance
 ```ts
 class Dog {
     eat() {
@@ -123,7 +119,7 @@ class Cat {
 }
 ```
 This creates duplicated logic.
------
+
 ### Example with Inheritance
 ```ts
 class Animal {
@@ -137,13 +133,16 @@ class Dog extends Animal {}
 class Cat extends Animal {}
 ```
 Now the logic exists only once.
-----
+
 ### Benefits of Inheritance
 1. Centralized Logic
+
 Shared functionality exists in one place.  
 This improves maintainability.  
 2. Logical Classification
+
 Inheritance models real-world relationship naturally.  
+
 Example:  
 ```ts
 Vehicle
@@ -152,11 +151,15 @@ Vehicle
  |--- Motorcycle
 ```
 This creates meaningful architecture.
-3. Reduced development time
+
+3. Reduced development time 
+
 Developers reuse existing logic instead of rewrite it.
+
 4. Easier bug fixing
+
 Fixing a parent class automatically updates all child classes.  
-----
+
 ## The risk of deep Inheritance
 Too much inheritance creates rigid systems.  
 Example:
@@ -167,19 +170,21 @@ Animal
              |___GermanShepherd
 ```
 Deep inheritance chains become difficult to understand.  
+
 Modern TypeScript often prefers:
 - Composition
 - Interface
 - Dependency Injection
+
 for better flexibility.  
-----
 
 ## 3. Polymorphism -- flexible and extensible systems
-Polymorphism means:
+Polymorphism means:   
 | One interface can represent multiple behaviors.  
-The word comes from *Greek*:
+The word comes from *Greek*:  
 - 'Poly' = many
-- 'Morph' = forms
+- 'Morph' = forms  
+
 This means the same method behaves differently depending on the objects.
 
 ### Core purpose of polymorphism
@@ -193,7 +198,7 @@ switch...
 ```
 statements.  
 Large conditional systems are difficult to scale.
-----
+
 ### Example without polymorphism
 ```ts
 if (paymentType === "paypal") {
@@ -204,7 +209,7 @@ else if (paymentType === "stripe") {
 }
 ```
 As new payment systems are added, complexity grows rapidly.  
-----
+
 ### Example with Polymorphism
 ```ts
 class Payment {
@@ -229,7 +234,7 @@ const payment: Payment = new StripePayment();
 
 payment.process();
 ```
-#### Real-World importance
+### Real-World importance
 Polymorphism is heavily used in:
 - Payment systems
 - Notification services
@@ -239,15 +244,16 @@ Polymorphism is heavily used in:
 
 ## Abstraction -- Managing complexity by hiding details
 Abstraction focuses on hiding unnecessary implementation details. It exposes only essential operations.  
+
 The user interacts with:  
 - What the system does
 - Not how it works internally
-#### Real-world analogy
+### Real-world analogy
 When using a TV remote:
 - You press buttons
 - The TV responds
 You do not understand internal circuitry. That hidden complexity is abstraction.
-#### Example
+### Example
 ```ts
 abstract class Database {
     abstract connect(): void;
@@ -261,8 +267,9 @@ class MongoDB extends Database {
     }
 }
 ```
-#### Benefits of Abstraction
+### Benefits of Abstraction
 1. Reduces mental overload
+
 Developers interact with simple interfaces. They do not think about internal implementation constantly.
 2. Standardizes Architectures  
 Every database class must follow:
@@ -270,18 +277,23 @@ Every database class must follow:
 connect()
 ```
 This creates predictable structures.
+
 3. Improves Collaboration  
+
 Team can work independently. Frontend developers may use APIs without understanding backend internals.
-4. Encourages loose coupling  
+
+4. Encourages loose coupling 
+
 Systems depend on contracts instead of implementations. This improves flexibility.
 
-#### Abstraction vs Simplicity
+### Abstraction vs Simplicity
 Abstraction does nor remove complexity. It hides complexity behind simple interfaces.  
 The complexity still exists internally.
------
+
 ## 4. Encapsulation -- Protecting data and preventing chaos
 Encapsulation means:  
-|  Restricting direct access to internal object state.  
+|  Restricting direct access to internal object state. 
+ 
 Objects control how their data is modified. The core goal is to prevent external systems from corrupting internal data.  
 #### Example
 ```ts
@@ -299,7 +311,7 @@ class BackAccount {
     }
 }
 ```
-##### Why encapsulation matters
+### Why encapsulation matters
 Without encapsulation:
 ```ts
 account.balance =- 100000;
@@ -313,10 +325,11 @@ Encapsulation is critical in:
 - Authentication systems
 - Medical software
 - Financial applications  
+
 because invalid data can cause serious problems.
------
+
 ## How all four pillars work together
-##### Imagine a food delivery app  
+#### Imagine a food delivery app  
 ***Inheritance***
 ```ts
 User
@@ -336,10 +349,10 @@ Developers use:
 payment.process()
 ```
 without knowing gateway internals.   
-----
-***Encapsulation***
+
+***Encapsulation***  
 Sensitive user balance remain private.
-----
+
 ## How OOP reduce complexity in large teams
 Large projects involve many developers:   
 OOP helps by:  
@@ -349,16 +362,16 @@ OOP helps by:
 - Improve code readability
 - Supporting reusable modules  
 
-#### Some mistakes we make
-###### Overusing inheritance
+### Some mistakes we make
+#### Overusing inheritance
 Too many inheritance layers create confusion.
-###### Weak Encapsulation
+#### Weak Encapsulation
 Making everything *public* reduce security.
-###### Excessive abstraction
+#### Excessive abstraction
 Too many abstraction make code difficult to follow.
-###### Ignoring polymorphism
+#### Ignoring polymorphism
 Large condition chains instead of flexible object behavior.
--------
+
 
 ## Conclusion
 The four pillars of OOP -- Inheritance, Polymorphism, Abstraction, and Encapsulation -- provide the foundation for building scalable, maintainable, and organized TypeScript applications.   
@@ -369,5 +382,6 @@ They help us:
 - Protect sensitive data
 - Improve collaboration
 - Manage growing complexity
+
 In large-scale TypeScript projects, these principles are not just theoretical concepts -- They are essential architecture tools that help team build reliable and enterprise-ready software systems.   
 Mastering these pillars is extremely important for both real-world development because they demonstrate strong software engineering knowledge, architecture thinking, and professional coding practices.
