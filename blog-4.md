@@ -9,7 +9,7 @@ Modern software applications are becoming increasingly large and complex. Enterp
 - Shared business logic
 - Microservices
 - Reusable UI components 
-   
+
 As projects grow, we face several major challenges:
 - Code duplication
 - Difficult debugging
@@ -34,6 +34,7 @@ The four fundamental pillars of OOP are:
 4. Encapsulation   
 
 These principle work together to reduce complexity, organize business logic, and improve maintainability.
+
 ---  
 ## Understanding OOP in TypeScript
 Before discussing the four pillars, it is important to understand what OOP actually tries to solve.
@@ -61,6 +62,7 @@ class User {
 }
 ```
 This grouping of related data and logic makes software easier to understand  
+
 ---  
 ## Why Large projects need OOP
 In small applications, procedural programming may work well.  
@@ -70,19 +72,23 @@ However, large applications require:
 - Scalable architecture
 - Controlled data flow
 - Modular design
+
 OOP helps achieve these goals.
+
 -----
 ## The Relationship between the four pillars
-The four pillars are not isolated concepts.  
+The four pillars are not isolated concepts.    
 They work together like parts of a building.  
-Pillar | Purpose
--------
-Inheritance | Reuse common logic
-Polymorphism | Create flexible behavior
-Abstraction | Hide unnecessary complexity
-Encapsulation | Protect internal data   
------
+
+|Pillar | Purpose |
+|-------|---------|
+|Inheritance | Reuse common logic|
+|Polymorphism | Create flexible behavior |
+|Abstraction | Hide unnecessary complexity|
+|Encapsulation | Protect internal data |
+
 Together they create maintainable software architecture.  
+
 ----
 ## Inheritance - Building hierarchies and reusing logic
 Inheritance allows one class to derive properties and behavior from another class.  
